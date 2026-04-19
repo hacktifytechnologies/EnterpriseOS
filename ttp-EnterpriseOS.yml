@@ -1,0 +1,34 @@
+- name: 'HACKTIFY: Setup EnterpriseOS Lab'
+  id: 9714b233-5eb4-8b80-b665-86bfb4dcfd02
+  description: >-
+    An enterprise SaaS portal is running on port 3000. The platform manages
+    corporate subscriptions and provides administrative features including
+    audit log exports. Log in with available credentials and explore the
+    application's subscription and billing flows. Your objective is to
+    access and exfiltrate sensitive audit data that should only be available
+    to active, paying subscribers with admin rights.
+  tactic: defense-evasion
+  technique_id: T1550.001
+  technique_name: 'Use Alternate Authentication Material: Application Access Token'
+  singleton: true
+  repeatable: false
+  delete_payload: false
+  executors:
+    - name: sh
+      platform: linux
+      command: |
+        git clone https://github.com/hacktifytechnologies/EnterpriseOS /opt/hacktify/EnterpriseOS
+        cd /opt/hacktify/EnterpriseOS
+        chmod +x setup.sh
+        bash setup.sh -a
+      code: null
+      language: null
+      build_target: null
+      payloads: []
+      uploads: []
+      timeout: 300
+      parsers: []
+      cleanup: []
+      variations: []
+      additional_info: {}
+  requirements: []
