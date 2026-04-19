@@ -17,16 +17,13 @@
     - name: sh
       platform: linux
       command: |
-        git clone https://github.com/hacktifytechnologies/EnterpriseOS /opt/hacktify/EnterpriseOS
-        cd /opt/hacktify/EnterpriseOS
-        chmod +x setup.sh
-        bash setup.sh -a
+        git clone https://github.com/hacktifytechnologies/EnterpriseOS /opt/hacktify/EnterpriseOS && cd /opt/hacktify/EnterpriseOS && docker compose up -d --build && echo 'Lab deployment complete'
       code: null
       language: null
       build_target: null
       payloads: []
       uploads: []
-      timeout: 300
+      timeout: 600
       parsers: []
       cleanup: []
       variations: []
