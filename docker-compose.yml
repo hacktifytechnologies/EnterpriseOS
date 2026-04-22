@@ -1,10 +1,9 @@
-version: '3.8'
-
 services:
   app:
-    build: .
+    image: hacktifytechnologies/enterpriseos:1.0
+    container_name: enterpriseos
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
+      NODE_ENV: production
     restart: unless-stopped
